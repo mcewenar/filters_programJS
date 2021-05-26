@@ -1,0 +1,41 @@
+<script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js" >
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="David McEwen" content="filters">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title> Upload Image Gray Scale </title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+  
+<header>
+  <h1> This page allow you to upload images and apply fun filters <br/><h1>
+    <br/>
+</header>
+<body>
+  <h2> <b> Enjoy it </b> </h2>
+  <canvas id="can"> </canvas>
+  <input type="file" multiple="false" accept="image/*" id="finput" onchange="upload()">
+  
+  <p> Filters:
+  <input type="button" class="gray" value="GrayScale" onclick="makegray()">
+    <input type="button" class="yell" value="Rainbow" onclick="dorainbow()"> 
+  <input type="button" class="red" value="Red" onclick="makered()">
+  <!--<input type="button" value="Blur" onclick="makeblur()">-->
+  </p>
+  <p> Clean image: 
+    <input type="button" id="jeje" value="Reset" class="stamp" onclick="doclear()"> </p>
+<br/>
+<br/>
+  
+
+  <footer>
+    <hr>
+    <a href="https://www.linkedin.com/in/dmcewenar/" target="_blank">LinkedIn Profile</a>
+    <!--<img src="10930995_10205535381802994_7653956175180293430_n.jpg" alt="No_charge">-->
+  </footer>   
+  <script src="manejoCanvasFilters.js"></script>
+</body>
+</html>

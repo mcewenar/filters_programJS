@@ -1,0 +1,66 @@
+h1 {
+    font-family: arial;
+    color: dimgray;
+  }
+  
+body {
+  font-family: arial;
+  margin: 100px;
+  background-color: rgb(191, 197, 199);
+}
+  
+canvas {
+  height: 200px;
+  border: 2px solid blue;
+}
+  
+input {
+  font-size: 15pt;
+  text-align: left;
+}
+
+header {
+  text-align: center;
+}
+p {
+  font-size: 15px;
+  font-weight: bold;
+}
+.stamp {
+  font-weight: bold;
+  background-color: brown;
+}
+.red {
+  background-color: red;
+}
+.yell {
+  background-color: GreenYellow; 
+}
+.gray {
+  background-color: gray;
+}
+#link {
+  font-size: 25px;
+}
+
+
+a {
+  clear: left;
+  bottom: -100px;
+  text-align: center;
+}
+a:link {
+    position: relative;
+    display: block;
+
+}
+a:visited {
+    color: rgb(211, 200, 200);
+}
+a:hover {
+    color: #b7c8da;
+}
+a:active {
+    color:rgb(162, 62, 255);
+}
+
