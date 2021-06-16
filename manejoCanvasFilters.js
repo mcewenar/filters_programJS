@@ -1,17 +1,18 @@
-var imgcanvas;
-var fileinput;
-var redimg;
-var grayimg;
+let imgcanvas;
+let fileinput;
+let redimg;
+let grayimg;
 //var blurimg;
-var rainbowimg;
-var image = null;
+let rainbowimg;
+let image = null;
 function upload() {
   
   /* var fileinput =     document.getElementById("textinp");
   var filename = fileinput.value;
-  alert("You choose"+ filename); */  fileinput =  document.getElementById("finput");
-   image = new SimpleImage(fileinput);
-   redimg = new SimpleImage(fileinput);
+  alert("You choose"+ filename); */
+  fileinput =  document.getElementById("finput");
+  image = new SimpleImage(fileinput);
+  redimg = new SimpleImage(fileinput);
   rainbowimg = new SimpleImage(fileinput);
   grayimg = new SimpleImage(fileinput);
   //blurimg = new SimpleImage(fileinput);
@@ -28,8 +29,8 @@ function imageIsLoaded() {
   }
 }
 function filterGray() {
-  for(var pixel of grayimg.values()) {
-    var avg= (pixel.getRed() + pixel.getGreen() + pixel.getBlue())/3;
+  for(let pixel of grayimg.values()) {
+    let avg= (pixel.getRed() + pixel.getGreen() + pixel.getBlue())/3;
     pixel.setRed(avg);
     pixel.setGreen(avg);
     pixel.setBlue(avg);
@@ -43,8 +44,8 @@ function makegray() {
   }
 }
 function filterRed() {
-    for (var pixel of redimg.values()) {
-    var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue())/3;
+    for (let pixel of redimg.values()) {
+    let avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue())/3;
     if(avg < 128) {
       pixel.setRed(2*avg);
       pixel.setGreen(0);
@@ -57,8 +58,7 @@ function filterRed() {
     }
   }
 }
-function makered()
-{
+function makered() {
   if(imageIsLoaded(redimg))
     {
       filterRed();
@@ -67,19 +67,19 @@ function makered()
   
 }
 function filterRainbow() {
-  for(var pixel of rainbowimg.values()) {
-    var x= pixel.getX();
-    var y= pixel.getY();
-    var w= rainbowimg.getWidth();
-    var h= rainbowimg.getHeight();
-    var avg= (pixel.getRed() + pixel.getGreen() + pixel.getBlue())/3;
+  for (let pixel of rainbowimg.values()) {
+    let x = pixel.getX();
+    let y = pixel.getY();
+    let w = rainbowimg.getWidth();
+    let h = rainbowimg.getHeight();
+    let avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue())/3;
     if (y <= h/7) {
       if ( avg < 128) {
         pixel.setRed(2*avg);
         pixel.setGreen(0);
         pixel.setBlue(0); 
       }
-      else{
+      else {
         pixel.setRed(255);
         pixel.setGreen(2*avg - 255);
         pixel.setBlue(2*avg - 255);
@@ -126,7 +126,7 @@ function filterRainbow() {
         pixel.setBlue(2*avg - 255);
       }
     }
-    else if (y > (h*4)/7 && y <= (h*5)/7){
+    else if (y > (h*4)/7 && y <= (h*5)/7) {
       if (avg < 128) {
         pixel.setRed(0);
         pixel.setGreen(0);
@@ -138,7 +138,7 @@ function filterRainbow() {
         pixel.setBlue (255);       
       }
     }
-    else if (y > (h*5)/7 && y <= (h*6)/7){
+    else if (y > (h*5)/7 && y <= (h*6)/7) {
       if (avg < 128) {
       pixel.setRed(0.8*avg);
       pixel.setGreen(0);
@@ -150,7 +150,7 @@ function filterRainbow() {
         pixel.setBlue(255);
       }
     }
-    else if (y > (h*6)/7 && y <= (h*7)/7){
+    else if (y > (h*6)/7 && y <= (h*7)/7) {
       if (avg < 128) {
         pixel.setRed(1.6 *avg);
         pixel.setGreen(0);
@@ -162,10 +162,10 @@ function filterRainbow() {
         pixel.setBlue(0.4*avg + 153);   
       }
     }
-    }
+  }
 }
  
-  function dorainbow(){
+  function dorainbow() {
     if(imageIsLoaded(rainbowimg)) {
       filterRainbow();
       rainbowimg.drawTo(imgcanvas);

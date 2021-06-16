@@ -43,24 +43,27 @@ p {
   font-size: 25px;
 }
 
-
+/*Footer*/
 a {
+  text-align: 50%;
   clear: left;
   bottom: -100px;
-  text-align: center;
+  font-size: 50px;
+  height: 100px;
+  width: 50%;
 }
 a:link {
-    position: relative;
-    display: block;
+  position: relative;
+  display: block;
 
 }
 a:visited {
-    color: rgb(211, 200, 200);
+  color: rgb(7, 0, 73);
 }
 a:hover {
-    color: #b7c8da;
+  color: #060708;
 }
 a:active {
-    color:rgb(162, 62, 255);
+  color:rgb(162, 62, 255);
 }
 
